@@ -9,7 +9,7 @@ const App = async () => {
     })
 }
 App().then(async result => {
-    expressApp.listen(8000, () => {
+    expressApp.listen(80, () => {
         console.log(`Listening on PORT 8000`)
     })
 }).catch(error => {
