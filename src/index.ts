@@ -8,7 +8,9 @@ expressApp.use(bodyParser.urlencoded({extended: false}))
 const App = async () => {
     let router = await APIRouter()
     console.log(router)
-    expressApp.use(router)
+    expressApp.get("/", (req, res) => {
+        res.send(200)
+    })
 }
 App().then(async result => {
     expressApp.listen(8000, () => {
