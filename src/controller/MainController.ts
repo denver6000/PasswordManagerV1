@@ -1,14 +1,19 @@
-import { MongoClient } from "mongodb"
+import { MongoClient, ServerApiVersion } from "mongodb"
 import * as PUtil from "../util/PasswordUtil"
 import * as DBUtil from "../util/DbUtil"
 import { NextFunction, Router } from "express"
+import path from "path"
 
 let APIRouter = Router()
 
 
 export default async function (): Promise<Router> {
 
-    let mongo = new MongoClient('mongodb://mongo:27017')
+    let mongo = new MongoClient('mongodb+srv://cluster0.o7y1l.mongodb.net/?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority&appName=Cluster0', 
+    {
+        tlsCertificateKeyFile: path.join(__dirname, "../cert/X509-cert-4668456244005003572-normal-user-0.pem"),
+        serverApi: ServerApiVersion.v1}
+    )
     await mongo.connect()
 
     APIRouter.post("/getPass", async (req, res) => {
