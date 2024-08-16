@@ -1,11 +1,11 @@
 import express from "express"
-import bodyParser from "body-parser"
+import * as bodyParser from "body-parser"
 
 const expressApp = express()
 expressApp.use(bodyParser.urlencoded({extended: false}))
 const App = async () => {
     expressApp.get("/", (req, res) => {
-        res.send(200)
+        res.sendStatus(200)
     })
 }
 App().then(async result => {

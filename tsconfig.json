@@ -3,8 +3,12 @@
         "moduleResolution": "NodeNext",
         "module": "NodeNext",
         "target": "ES6",
-        "esModuleInterop": true
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "esModuleInterop": true,
+
 
     },
-    "include": ["src/*"]
+    "include": ["src/*/**.ts"],
+    "exclude": ["node_modules", "./src/test"]
 }
