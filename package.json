@@ -6,6 +6,7 @@
     "test": "ts-node src/test/test.ts",
     "main": "node ./dist/index.js",
     "build": "npx tsc",
+    "stop": "pm2 stop index",
     "start": "pm2 start ./dist/index.js"
   },
   "keywords": [],
