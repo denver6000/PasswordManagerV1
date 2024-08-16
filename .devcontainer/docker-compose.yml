@@ -1,0 +1,31 @@
+version: '3.1'
+services:
+  app:
+    build: 
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        target: /workspaces/PasswordManagerAPIV1
+        source: ../
+    command: sleep infinity
+    ports:
+      - 8000:8000
+    networks:
+      - app-network
+
+  mongo:
+    image: mongodb/mongodb-community-server:latest
+    ports:
+      - 27018:27017
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - app-network
+    
+
+volumes:
+  mongo-data:
+    driver: local
+networks:
+  app-network:
+    driver: local
