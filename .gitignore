@@ -1,6 +1,5 @@
 node_modules
-.devcontainer
-.github
 package-lock.json
 src/**/*.pem
 debug.log
+./dist/**/*
