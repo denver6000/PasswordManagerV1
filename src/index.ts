@@ -1,13 +1,15 @@
 import express from "express"
 import * as bodyParser from "body-parser"
-import { createServer } from "http"
-
+import { createServer } from "https"
+import path from "path"
+import { readFileSync } from "fs"
+console.log(__dirname)
 const expressApp = express()
-const httpServer = createServer(expressApp)
+const httpServer = createServer({key: readFileSync(path.join(process.env.KEY_PEM)), cert: readFileSync(path.join(process.env.CERT_PEM))}, expressApp)
 expressApp.use(bodyParser.urlencoded({ extended: false }))
 
 expressApp.get("/", (req, res) => {
     res.send("GG")
 })
 
-httpServer.listen(80)
+httpServer.listen(443)

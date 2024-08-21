@@ -3,3 +3,7 @@ package-lock.json
 src/**/*.pem
 debug.log
 dist
+**key.pem
+**.key
+.devcontainer
+.github
