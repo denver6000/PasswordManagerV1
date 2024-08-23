@@ -8,5 +8,5 @@ export NVM_DIR="$HOME/.nvm"
 cd var/node/app
 set -e
 nvm use 17
-npm run stop
+pm2 stop index
 
