@@ -9,6 +9,6 @@
 
 
     },
-    "include": ["src/**/*.ts"],
+    "include": ["src/**/*", "src/.env"],
     "exclude": ["node_modules", "./src/test"]
 }
