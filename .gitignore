@@ -7,3 +7,4 @@ dist
 **.key
 .devcontainer
 .github
+.env
