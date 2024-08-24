@@ -9,6 +9,6 @@
 
 
     },
-    "include": ["src/**/*", "src/.env"],
-    "exclude": ["node_modules", "./src/test"]
+    "include": ["src/**/*", "src/.env", "ecosystem.config.js"],
+    "exclude": ["node_modules", "./src/test", "./src/start/**/*"]
 }

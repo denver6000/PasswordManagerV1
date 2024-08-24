@@ -7,7 +7,7 @@
     "main": "npx tsc && node ./dist/index.js",
     "build": "npx tsc",
     "stop": "pm2 stop index",
-    "start": "pm2 start ./dist/index.js"
+    "start_local": "pm2 start ecosystem.config.js --env development"
   },
   "keywords": [],
   "author": "",

@@ -4,10 +4,10 @@ import { Server, createServer } from "https"
 import path from "path"
 import { readFileSync } from "fs"
 import dotenv from "dotenv"
-dotenv.config()
-if (process.env.NODE_ENV == "development") {
+// dotenv.config()
+// if (process.env.NODE_ENV == "development") {
     
-} 
+// } 
 
 const expressApp = express()
 let httpServer: Server;
@@ -21,7 +21,6 @@ httpServer = createServer({key: readFileSync(
 
 expressApp.use(bodyParser.urlencoded({ extended: false }))
 expressApp.get("/", (req, res) => {
-    res.send("GG")
+    res.send(process.env.TEST)
 })
-
-httpServer.listen(443)
+httpServer.listen(process.env.PORT)
