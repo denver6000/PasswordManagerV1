@@ -21,6 +21,6 @@ httpServer = createServer({key: readFileSync(
 
 expressApp.use(bodyParser.urlencoded({ extended: false }))
 expressApp.get("/", (req, res) => {
-    res.send(process.env.TEST)
+    res.send('gg')
 })
 httpServer.listen(process.env.PORT)
