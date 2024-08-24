@@ -4,7 +4,11 @@ import { Server, createServer } from "https"
 import path from "path"
 import { readFileSync } from "fs"
 import dotenv from "dotenv"
-dotenv.config({path: path.join(__dirname, "../.env")})
+dotenv.config()
+if (process.env.NODE_ENV == "development") {
+    
+} 
+
 const expressApp = express()
 let httpServer: Server;
 
