@@ -5,5 +5,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 nvm use 17
 npm i
+npm i -g pm2
 npm i @types/node
 npm run build
